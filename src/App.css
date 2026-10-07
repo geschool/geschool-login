@@ -6,6 +6,350 @@
   height: 40vmin;
   pointer-events: none;
 }
+/* MODAL OVERLAY & POPUP STYLES */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-popup {
+    background: #fff;
+    border-radius: 12px;
+    padding: 35px 30px;
+    text-align: center;
+    min-width: 320px;
+    max-width: 380px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    position: relative;
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.3s;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.close-btn:hover {
+    color: #333;
+}
+
+.popup-icon {
+    margin: 0 auto 20px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+}
+
+/* WARNING POPUP STYLING */
+.warning-icon {
+    background: #FEF3E2;
+    color: #FF9800;
+}
+
+.warning-popup .popup-title {
+    color: #FF9800;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0 0 12px 0;
+}
+
+.warning-popup .popup-message {
+    color: #666;
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+}
+
+.warning-popup .popup-btn {
+    background: #279EFF;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 30px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: 100%;
+    height: 42px;
+    margin-top: 0;
+}
+
+.warning-popup .popup-btn:hover {
+    background: #1e7fc9;
+}
+
+/* COOLDOWN POPUP STYLING */
+.cooldown-icon {
+    background: #E8F4FD;
+    color: #279EFF;
+}
+
+.cooldown-popup .popup-title {
+    color: #333;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0 0 12px 0;
+}
+
+.cooldown-popup .popup-message {
+    color: #666;
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 0 0 25px 0;
+}
+
+.countdown-timer {
+    margin: 0 0 25px 0;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+}
+
+.countdown-timer span {
+    display: block;
+    font-size: 12px;
+    color: #279EFF;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.timer-display {
+    font-size: 32px;
+    font-weight: 700;
+    color: #279EFF;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 2px;
+}
+
+.cooldown-popup .popup-btn {
+    background: #CCC;
+    color: #999;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 30px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: not-allowed;
+    width: 100%;
+    height: 42px;
+    margin-top: 0;
+}
+
+/* BLOCK POPUP STYLING */
+.block-icon {
+    background: #FCE8E8;
+    color: #DC3545;
+}
+
+.block-popup .popup-title {
+    color: #DC3545;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0 0 12px 0;
+}
+
+.block-popup .popup-message {
+    color: #666;
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+}
+
+.block-timer {
+    margin: 0 0 25px 0;
+    padding: 15px;
+    background: #FCE8E8;
+    border-radius: 8px;
+}
+
+.timer-label {
+    font-size: 12px;
+    color: #DC3545;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.block-timer .timer-display {
+    font-size: 32px;
+    font-weight: 700;
+    color: #DC3545;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 2px;
+}
+
+.block-popup .popup-btn {
+    background: #CCC;
+    color: #999;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 30px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: not-allowed;
+    width: 100%;
+    height: 42px;
+    margin-top: 0;
+}
+
+.clock-icon {
+    display: inline-block;
+    font-size: 36px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.lock-icon {
+    display: inline-block;
+    font-size: 36px;
+    animation: shake 0.5s ease-in-out infinite;
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-3px);
+    }
+    75% {
+        transform: translateX(3px);
+    }
+}
+
+/* INPUT ERROR STYLING */
+.form-control.is-invalid {
+    border-color: #DC3545;
+    background-image: none;
+}
+
+.form-control.is-invalid:focus {
+    border-color: #DC3545;
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+.invalid-feedback {
+    color: #DC3545;
+    font-size: 12px;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.invalid-feedback svg {
+    flex-shrink: 0;
+}
+
+/* LOADING STATE */
+.loading-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.spinner-border.loading {
+    width: 16px;
+    height: 16px;
+    border-width: 2px;
+}
+
+.main-form button[type="submit"]:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+@media (max-width: 767px) {
+    .main-container {
+        padding: 30px;
+        margin-bottom: 3rem;
+    }
+
+    .switch-btn-login, .switch-btn-register {
+        height: 30px;
+        padding: 4px;
+    }
+
+    .auth-describe {
+        display: none;
+    }
+
+    .modal-popup {
+        min-width: 280px;
+        max-width: 90%;
+        padding: 25px 20px;
+    }
+
+    .popup-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 30px;
+        margin-bottom: 15px;
+    }
+
+    .popup-title {
+        font-size: 15px;
+    }
+
+    .popup-message {
+        font-size: 12px;
+    }
+
+    .timer-display {
+        font-size: 28px;
+    }
+
+    .popup-btn {
+        font-size: 12px;
+        height: 38px;
+    }
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
